@@ -1,0 +1,56 @@
+$ flask init-db
+Error al conectar con la base de datos: 2017 (HY000): Can't open named pipe to host: .  pipe: MySQL (2)
+Traceback (most recent call last):
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\mysql\connector\connection_cext.py", line 268, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't open named pipe to host: .  pipe: MySQL (2)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Scripts\flask.exe\__main__.py", line 7, in <module>
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\cli.py", line 1063, in main
+    cli.main()
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\click\core.py", line 1055, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\click\core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\click\core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\click\core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\click\decorators.py", line 26, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\cli.py", line 357, in decorator
+    return __ctx.invoke(f, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\click\core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Dropbox\FRANCEL\programming\github\tasklist\todo\db.py", line 41, in init_db_command
+    init_db()
+  File "D:\Dropbox\FRANCEL\programming\github\tasklist\todo\db.py", line 32, in init_db
+    db,c = get_db()
+           ^^^^^^^^
+  File "D:\Dropbox\FRANCEL\programming\github\tasklist\todo\db.py", line 21, in get_db
+    raise e
+  File "D:\Dropbox\FRANCEL\programming\github\tasklist\todo\db.py", line 12, in get_db
+    g.db = mysql.connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\mysql\connector\pooling.py", line 286, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\mysql\connector\connection_cext.py", line 101, in __init__
+    self.connect(**kwargs)
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\mysql\connector\abstracts.py", line 1108, in connect
+    self._open_connection()
+  File "C:\Users\afran\AppData\Local\Programs\Python\Python311\Lib\site-packages\mysql\connector\connection_cext.py", line 273, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2017 (HY000): Can't open named pipe to host: .  pipe: MySQL (2)
